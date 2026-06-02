@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBIZONE | Nowoczesne Strony WWW</title>
+    <link rel="icon" type="image/x-icon" href="webizone.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Poświaty tła -->
+    <div class="glow-bg glow-purple"></div>
+    <div class="glow-bg glow-blue"></div>
+
+    <header class="header-glass">
+        <div class="container-nav">
+            <div class="logo">WEBI<span>ZONE</span></div>
+            <nav id="nav-menu">
+                <a href="#" onclick="changePage(event, 'home-view', 'home')" id="link-home" class="nav-link active">Start</a>
+                <a href="#" onclick="changePage(event, 'home-view', 'uslugi')" id="link-uslugi" class="nav-link">Usługi</a>
+                <a href="#" onclick="changePage(event, 'portfolio-view')" id="link-portfolio" class="nav-link">Portfolio</a>
+                <a href="#" onclick="changePage(event, 'kontakt-view')" id="link-kontakt" class="nav-link">Kontakt</a>
+            </nav>
+            <div class="header-right">
+                <a href="#" onclick="changePage(event, 'kontakt-view')" class="btn-quote desktop-only">Darmowa wycena</a>
+                <div class="mobile-btn" id="mobile-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main>
+            <!-- WIDOK START + USŁUGI -->
+            <div id="home-view" class="page-view active">
+                <section id="home" class="hero container">
+                    <div class="hero-content">
+                        <div class="badge-ios"><span class="dot-green"></span> Nowy standard designu</div>
+                        <h1>PRZYSZŁOŚĆ <br><span>TWOJEJ FIRMY</span></h1>
+                        <p class="hero-desc">Tworzymy nowoczesne strony internetowe, które łączą estetykę, funkcjonalność i technologię. Prosty design, dobre doświadczenie użytkownika i rozwiązania dopasowane do potrzeb.</p>
+                        <div class="hero-btns">
+                            <button onclick="changePage(event, 'kontakt-view')" class="btn-primary">Zacznijmy projekt</button>
+                            <button onclick="changePage(event, 'home-view', 'uslugi')" class="btn-glass">Zobacz ofertę</button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-glass-card">
+                            <div class="card-head">
+                                <span>webizone.pl</span>
+                                <img src="webizone.png" style="width:40px; height:40px;">
+                            </div>
+                            <div class="stat-main">99%</div>
+                            <div class="stat-bar-container">
+                                <div class="stat-label">Zadowolenie klientów</div>
+                                <div class="stat-bar"><div class="stat-fill"></div></div>
+                            </div>
+                            <div class="mini-stats">
+                                <div class="ms-box"><span>Wsparcie</span><strong>24/7</strong></div>
+                                <div class="ms-box"><span>Doświadczenie</span><strong>4 lata+</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="uslugi-anchor" style="scroll-margin-top: 100px;"></div>
+                
+                <section id="uslugi" class="services container">
+                    <div class="section-header">
+                        <h2>Nasze <span>Usługi</span></h2>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-ios-card">
+                            <div class="s-number">01</div>
+                            <h3>Wizytówki Premium</h3>
+                            <p>Strony typu One-Page z nieskazitelnym designem.</p>
+                        </div>
+                        <div class="service-ios-card">
+                            <div class="s-number">02</div>
+                            <h3>E-commerce</h3>
+                            <p>Sklepy online intuicyjne jak smartfon.</p>
+                        </div>
+                        <div class="service-ios-card">
+                            <div class="s-number">03</div>
+                            <h3>Systemy dedykowane</h3>
+                            <p>Rozwiązania skrojone pod Twój biznes.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- WIDOK PORTFOLIO -->
+            <div id="portfolio-view" class="page-view">
+                <section class="container">
+                    <div class="section-header"><h2>Portfolio <span>Showcase</span></h2></div>
+                    <div class="portfolio-grid">
+                        <div class="port-ios-card" onclick="openGallery('https://i.imgur.com/5ONPxEU.png')">
+                            <div class="port-img-bg" style="background-image: url('https://i.imgur.com/5ONPxEU.png');"></div>
+                            <div class="port-overlay"><h4>One-Page</h4></div>
+                        </div>
+                        <div class="port-ios-card" onclick="openGallery('https://i.imgur.com/lluzI9P.png')">
+                            <div class="port-img-bg" style="background-image: url('https://i.imgur.com/lluzI9P.png');"></div>
+                            <div class="port-overlay"><h4>Luxury Brand</h4></div>
+                        </div>
+                        <div class="port-ios-card" onclick="openGallery('https://i.imgur.com/TksMVda.png')">
+                            <div class="port-img-bg" style="background-image: url('https://i.imgur.com/TksMVda.png');"></div>
+                            <div class="port-overlay"><h4>Modern Dashboard</h4></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- WIDOK KONTAKT -->
+            <div id="kontakt-view" class="page-view">
+                <section class="container">
+                    <div class="section-header"><h2>Napisz <span>do nas</span></h2></div>
+                    <div class="contact-glass-card">
+                        <form id="contact-form">
+                            <input type="text" name="user_name" placeholder="Twoje Imię" class="ios-input" required>
+                            <input type="email" name="user_email" placeholder="Twój E-mail" class="ios-input" required>
+                            <textarea name="message" placeholder="Opisz swój projekt..." rows="4" class="ios-input" required></textarea>
+                            <button type="submit" id="submit-btn" class="btn-primary" style="width:100%">Wyślij wiadomość</button>
+                            <div id="status-msg" style="margin-top:20px; text-align:center;"></div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer-ios">
+        <p>&copy; <span id="year"></span> WEBIZONE. Nowoczesne strony WWW.</p>
+    </footer>
+
+    <!-- Szklany Instagram - Pływający -->
+    <a href="https://www.instagram.com/webizone" class="insta-float-glass" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <div id="galleryModal" class="gallery-modal" onclick="this.style.display='none'">
+        <img id="imgFull">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() { emailjs.init({ publicKey: "NayP0L320YB9CS6m7" }); })();
+
+        function changePage(event, viewId, anchorId = null) {
+            if(event) event.preventDefault();
+            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+            document.getElementById(viewId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+            if(anchorId === 'uslugi') {
+                document.getElementById('link-uslugi').classList.add('active');
+                setTimeout(() => { document.getElementById('uslugi-anchor').scrollIntoView({ behavior: 'smooth' }); }, 50);
+            } else {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+                if(viewId === 'home-view') document.getElementById('link-home').classList.add('active');
+                else document.getElementById('link-' + viewId.replace('-view', '')).classList.add('active');
+            }
+            document.getElementById('nav-menu').classList.remove('active');
+        }
+
+        const form = document.getElementById('contact-form');
+        if(form) {
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                const btn = document.getElementById('submit-btn');
+                btn.innerText = "Wysyłanie..."; btn.disabled = true;
+                emailjs.send('home_pl_service', 'template_k8gdw95', {
+                    user_name: this.user_name.value,
+                    user_email: this.user_email.value,
+                    message: this.message.value
+                }).then(() => {
+                    document.getElementById('status-msg').innerHTML = "<span style='color:#4ade80'>Wysłano pomyślnie! ✅</span>";
+                    this.reset(); btn.innerText = "Wyślij wiadomość"; btn.disabled = false;
+                });
+            };
+        }
+
+        document.getElementById('mobile-btn').onclick = () => document.getElementById('nav-menu').classList.toggle('active');
+        function openGallery(src) { document.getElementById("galleryModal").style.display = "flex"; document.getElementById("imgFull").src = src; }
+        document.getElementById('year').innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
